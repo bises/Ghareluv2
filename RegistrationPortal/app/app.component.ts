@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
                 <ip-person></ip-person>`,
 })
 export class AppComponent  {
-    http.get
     name = 'Angular v 5';
 }

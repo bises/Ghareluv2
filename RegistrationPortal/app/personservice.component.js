@@ -10,27 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var personservice_component_1 = require("./personservice.component");
-var PeopleComponent = /** @class */ (function () {
-    function PeopleComponent(personService) {
-        this.personService = personService;
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
+var PersonService = /** @class */ (function () {
+    function PersonService(http) {
+        this.http = http;
     }
-    PeopleComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.personService.getPerson()
-            .subscribe(function (personData) {
-            _this.persons = personData;
-        });
+    PersonService.prototype.getPerson = function () {
+        return this.http.get('http://localhost:62865/api/People')
+            .map(function (response) { return response.json(); });
     };
-    PeopleComponent = __decorate([
-        core_1.Component({
-            selector: 'ip-person',
-            templateUrl: 'app/person.component.html',
-            providers: [personservice_component_1.PersonService]
-        }),
-        __metadata("design:paramtypes", [personservice_component_1.PersonService])
-    ], PeopleComponent);
-    return PeopleComponent;
+    PersonService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http])
+    ], PersonService);
+    return PersonService;
 }());
-exports.PeopleComponent = PeopleComponent;
-//# sourceMappingURL=persons.component.js.map
+exports.PersonService = PersonService;
+//# sourceMappingURL=personservice.component.js.map
