@@ -7,17 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.name = 'Angular v 5';
+var PeopleComponent = /** @class */ (function () {
+    function PeopleComponent() {
+        this.name = "ip-person";
     }
-    AppComponent = __decorate([
+    PeopleComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<h1>Hello {{name}} asdasdasd</h1>\n                <ip-person></ip-person>",
+            selector: 'ip-person',
+            template: "<h2>Hello from the person {{name}}component</h2>"
         })
-    ], AppComponent);
-    return AppComponent;
+    ], PeopleComponent);
+    return PeopleComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.PeopleComponent = PeopleComponent;
+//# sourceMappingURL=persons.component.js.map
