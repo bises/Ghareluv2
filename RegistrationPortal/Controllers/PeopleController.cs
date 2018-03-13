@@ -13,11 +13,13 @@ using RegistrationPortal.Models;
 
 namespace RegistrationPortal.Controllers
 {
+    [RoutePrefix("api/People")]
     public class PeopleController : ApiController
     {
         private RegistrationPortalContext db = new RegistrationPortalContext();
 
-        // GET: api/People
+        // GET: getPeople
+        [Route("")]
         public IQueryable<Person> GetPeople()
         {
             return db.People;
