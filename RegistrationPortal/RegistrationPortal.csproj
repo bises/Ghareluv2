@@ -234,9 +234,14 @@
     <Compile Include="Migrations\201712240040572_Initial.Designer.cs">
       <DependentUpon>201712240040572_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803130435521_AddedModifiedDateTimeAndUserInfo.cs" />
+    <Compile Include="Migrations\201803130435521_AddedModifiedDateTimeAndUserInfo.Designer.cs">
+      <DependentUpon>201803130435521_AddedModifiedDateTimeAndUserInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\EntityBase.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\RegistrationPortalContext.cs" />
@@ -246,7 +251,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\person.component.html" />
+    <Content Include="app\Person\person.component.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -320,13 +325,16 @@
     <EmbeddedResource Include="Migrations\201712240040572_Initial.resx">
       <DependentUpon>201712240040572_Initial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803130435521_AddedModifiedDateTimeAndUserInfo.resx">
+      <DependentUpon>201803130435521_AddedModifiedDateTimeAndUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\main.ts" />
-    <TypeScriptCompile Include="app\persons.component.ts" />
-    <TypeScriptCompile Include="app\personservice.component.ts" />
+    <TypeScriptCompile Include="app\Person\persons.component.ts" />
+    <TypeScriptCompile Include="app\Person\personservice.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

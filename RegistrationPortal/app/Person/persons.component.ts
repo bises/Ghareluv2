@@ -5,7 +5,7 @@ import { PersonService } from './personservice.component'
 
 @Component({
     selector: 'ip-person',
-    templateUrl: 'app/person.component.html',
+    templateUrl: 'app/Person/person.component.html',
     providers: [PersonService]
 })
 

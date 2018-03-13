@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RegistrationPortal.Models
 {
-    public class Person
+    public class Person:EntityBase
     {
         [Key]
         [Required]

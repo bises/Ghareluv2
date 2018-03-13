@@ -10,7 +10,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
-var persons_component_1 = require("./persons.component");
+var persons_component_1 = require("./Person/persons.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }

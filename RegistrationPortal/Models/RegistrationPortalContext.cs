@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace RegistrationPortal.Models
@@ -20,5 +21,38 @@ namespace RegistrationPortal.Models
         }
 
         public System.Data.Entity.DbSet<RegistrationPortal.Models.Person> People { get; set; }
+
+        public override int SaveChanges()
+        {
+            AddTimeStamp();
+            return base.SaveChanges();
+        }
+
+        public override Task<int> SaveChangesAsync()
+        {
+            AddTimeStamp();
+            return base.SaveChangesAsync();
+        }
+
+        private void AddTimeStamp()
+        {
+            var entities = ChangeTracker.Entries().Where(x => x.Entity is EntityBase && (x.State == EntityState.Added || x.State == EntityState.Modified));
+
+            var currentUsername = !string.IsNullOrEmpty(System.Web.HttpContext.Current?.User?.Identity?.Name)
+                ? HttpContext.Current.User.Identity.Name
+                : "Anonymous";
+
+            foreach (var entity in entities)
+            {
+                if (entity.State == EntityState.Added)
+                {
+                    ((EntityBase)entity.Entity).DateCreated = DateTime.UtcNow;
+                    ((EntityBase)entity.Entity).UserCreated = currentUsername;
+                }
+
+                ((EntityBase)entity.Entity).DateModified = DateTime.UtcNow;
+                ((EntityBase)entity.Entity).UserModified = currentUsername;
+            }
+        }
     }
 }

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { PeopleComponent } from './persons.component'
+import { PeopleComponent } from './Person/persons.component';
 
 @NgModule({
     imports: [BrowserModule, HttpModule],
