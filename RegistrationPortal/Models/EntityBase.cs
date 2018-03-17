@@ -10,8 +10,11 @@ namespace RegistrationPortal.Models
     public abstract class EntityBase
     {
         public DateTimeOffset? DateCreated { get; set; }
+
         public string UserCreated { get; set; }
+
         public DateTimeOffset? DateModified { get; set; }
+
         public string UserModified { get; set; }
     }
 }
