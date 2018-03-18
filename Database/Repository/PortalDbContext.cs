@@ -3,14 +3,13 @@ using System.Configuration;
 using System.Data.Entity;
 using System;
 using System.Linq;
-using System.Web;
 using System.Threading.Tasks;
 
 namespace Database.Repository
 {
     public class PortalDbContext : DbContext
     {
-        public PortalDbContext() : base(ConfigurationManager.ConnectionStrings["PortalDbContext"].ConnectionString) { }
+        public PortalDbContext() : base("name=PortalDbContext") { }
 
         public DbSet<Person> Persons { get; set; }
 
