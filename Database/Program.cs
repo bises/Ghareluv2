@@ -29,6 +29,7 @@ namespace Database
             person.BirthDate = Convert.ToDateTime(Console.ReadLine());
             Console.WriteLine("Citizen No: ");
             person.CitizenshipNumber = Console.ReadLine();
+            person.AddressId = 1;
             Console.WriteLine("\nPress Enter to save to database.");
             Console.ReadLine();
 
