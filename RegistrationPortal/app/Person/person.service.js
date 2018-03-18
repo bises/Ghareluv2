@@ -21,6 +21,16 @@ var PersonService = /** @class */ (function () {
             .map(function (response) { return response.json(); });
         ;
     };
+    PersonService.prototype.getAllCities = function () {
+        return this.http.get('http://localhost:62865/api/Address/Cities')
+            .map(function (response) { return response.json(); });
+        ;
+    };
+    PersonService.prototype.getAllCountries = function () {
+        return this.http.get('http://localhost:62865/api/Address/Countries')
+            .map(function (response) { return response.json(); });
+        ;
+    };
     PersonService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Http])
@@ -28,4 +38,4 @@ var PersonService = /** @class */ (function () {
     return PersonService;
 }());
 exports.PersonService = PersonService;
-//# sourceMappingURL=personservice.component.js.map
+//# sourceMappingURL=person.service.js.map

@@ -1,15 +1,15 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-import { PersonService } from './personservice.component'
+import { PersonService } from '../person.service'
 
 
 @Component({
-    selector: 'ip-person',
-    templateUrl: 'app/Person/person.component.html',
+    selector: 'ip-list-person',
+    templateUrl: 'app/Person/list/list-person.component.html',
     providers: [PersonService]
 })
 
-export class PeopleComponent implements OnInit {
+export class ListPersonComponent implements OnInit {
     public persons: any[];
 
     constructor(private personService: PersonService) { }
