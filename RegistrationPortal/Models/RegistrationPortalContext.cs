@@ -20,7 +20,7 @@ namespace RegistrationPortal.Models
         {
         }
 
-        public System.Data.Entity.DbSet<RegistrationPortal.Models.Person> People { get; set; }
+        public DbSet<Person> People { get; set; }
 
         public override int SaveChanges()
         {
@@ -38,7 +38,7 @@ namespace RegistrationPortal.Models
         {
             var entities = ChangeTracker.Entries().Where(x => x.Entity is EntityBase && (x.State == EntityState.Added || x.State == EntityState.Modified));
 
-            var currentUsername = !string.IsNullOrEmpty(System.Web.HttpContext.Current?.User?.Identity?.Name)
+            var currentUsername = !string.IsNullOrEmpty(HttpContext.Current?.User?.Identity?.Name)
                 ? HttpContext.Current.User.Identity.Name
                 : "Anonymous";
 

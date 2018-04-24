@@ -10,14 +10,16 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
-var persons_component_1 = require("./Person/persons.component");
+var list_person_component_1 = require("./Person/list/list-person.component");
+var edit_person_component_1 = require("./Person/edit/edit-person.component");
+var create_person_component_1 = require("./Person/create/create-person.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
-            declarations: [app_component_1.AppComponent, persons_component_1.PeopleComponent],
+            declarations: [app_component_1.AppComponent, list_person_component_1.ListPersonComponent, edit_person_component_1.EditPersonComponent, create_person_component_1.CreatePersonComponent],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
