@@ -1,0 +1,53 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Person</h3>
+    </div>
+    <div class="panel-body">
+        <form>
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" type="text" class="form-control" />
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label for="middleName">Middle Name</label>
+                    <input id="middleName" type="text" class="form-control" />
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label for="coutryName">Country</label>
+                    <select id="coutryName" class="form-control">
+                        <option *ngFor="let country of countries" [value]="country.Id">
+                            {{country.Name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label for="cityName">City</label>
+                    <select id="cityName" class="form-control">
+                        <option *ngFor="let city of cities" [value]="city.Id">
+                            {{city.Name}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label>Birth Date</label>
+                    <input type="date" class="form-control" />
+                </div>
+            </div>
+            <!--<div class="row">
+                <div class="col-sm-4 form-group">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>-->
+        </form>
+    </div>
+</div>

@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace RegistrationPortal.Models
+namespace Database.Models
 {
-    public class Person:EntityBase
+    public class Person : BaseEntity
     {
         [Key]
-        [Required]
-        public int PersonId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string FirstName { get; set; }
@@ -17,12 +20,6 @@ namespace RegistrationPortal.Models
 
         public string LastName { get; set; }
 
-        [Required]
-        public string Address { get; set; }
-
-        [Required]
-        public DateTime BirthDate { get; set; }
-
         public string FatherName { get; set; }
 
         public string GrandFatherName { get; set; }
@@ -30,5 +27,12 @@ namespace RegistrationPortal.Models
         [Required]
         public string CitizenshipNumber { get; set; }
 
+        [Required]
+        public DateTime BirthDate { get; set; }     
+        
+        public int AddressId { get; set; }
+
+        [ForeignKey("AddressId")]
+        public virtual Address Address { get; set; }
     }
 }
