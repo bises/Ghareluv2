@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace DatabaseTrasfer
 {
@@ -12,6 +10,10 @@ namespace DatabaseTrasfer
         static void Main(string[] args)
         {
             string line;
+            Match match;
+            string pattern = @"(.+?)=(.*)";
+            bool readBegin = false;
+            IDictionary<string, string> dictionary = new Dictionary<string, string>();
             try
             {
                 using (StreamReader fs = new StreamReader(@"C:\Users\achar\Desktop\Database.ini"))
@@ -20,7 +22,19 @@ namespace DatabaseTrasfer
                     {
                         if (line.Contains("[section"))
                         {
-
+                            readBegin = true;
+                            continue;
+                        }
+                        if (readBegin)
+                        {
+                            match = Regex.Match(line, pattern);
+                            dictionary.Add(match.Groups[1].Value, match.Groups[2].Value);
+                        }
+                        if (line.Contains("pan_no="))
+                        {
+                            Console.WriteLine(dictionary["reg_num"]);
+                            readBegin = false;
+                            dictionary.Clear();
                         }
                     }
                 }
