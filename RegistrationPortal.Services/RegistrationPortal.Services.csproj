@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B6A51C92-12A3-4186-853B-D1933E96A6BB}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{500067FC-8256-4758-9954-AFA61C0797AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DatabaseTrasfer</RootNamespace>
-    <AssemblyName>DatabaseTrasfer</AssemblyName>
+    <RootNamespace>RegistrationPortal.Services</RootNamespace>
+    <AssemblyName>RegistrationPortal.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,11 +40,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="DatabaseTransferContext\Interface\IDatabaseTransferService.cs" />
+    <Compile Include="DatabaseTransferContext\Services\DatabaseTransferService.cs" />
+    <Compile Include="SharedContext\Entities\Address.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharedContext\Entities\City.cs" />
+    <Compile Include="SharedContext\Entities\Country.cs" />
+    <Compile Include="SharedContext\Entities\Person.cs" />
+    <Compile Include="SharedContext\Entities\Udhyog.cs" />
+    <Compile Include="SharedContext\Entities\UdhyogClass.cs" />
+    <Compile Include="SharedContext\Entities\UdhyogSubClass.cs" />
+    <Compile Include="SharedContext\Entities\UdhyogType.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <ProjectReference Include="..\DatabaseTrasfer\DatabaseTrasfer.csproj">
+      <Project>{b6a51c92-12a3-4186-853b-d1933e96a6bb}</Project>
+      <Name>DatabaseTrasfer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DatabaseTransferContext\Entities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
