@@ -24,10 +24,8 @@ namespace Database.Models
 
         public string GrandFatherName { get; set; }
 
-        [Required]
         public string CitizenshipNumber { get; set; }
 
-        [Required]
         public DateTime BirthDate { get; set; }     
         
         public int AddressId { get; set; }
